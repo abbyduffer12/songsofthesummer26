@@ -30,7 +30,8 @@ The layout renders `title`, `performer`, a five-star rating built from
    performer, rating, and review. Rename the files if you'd like nicer slugs
    (the URL is based on the filename, e.g. `song-01.md` → `/songs/song-01/`).
 2. Update `_config.yml`: `title`, `tagline`, `description`, `author`,
-   `email`, and `url`/`baseurl` (see below).
+   `email`, and especially `url`/`baseurl` (see below) — the shipped
+   values are placeholders and won't point at your site.
 3. Edit `index.md` with your own homepage introduction.
 4. Add or remove songs by adding/removing files in `_songs/` — the home page
    picks up everything in the collection automatically, sorted by
@@ -55,9 +56,10 @@ with `actions/deploy-pages`.
    Actions**.
 2. Push to `main` — the workflow builds and deploys automatically.
 
-If you rename the repository, or fork it under a different name, update
-`baseurl` in `_config.yml` to match (`"/<repo-name>"`), and `url` to match
-your GitHub Pages domain.
+Before publishing, set `url` in `_config.yml` to your own GitHub Pages
+domain (e.g. `"https://<your-username>.github.io"`). If you rename the
+repository, or fork it under a different name, also update `baseurl` to
+match (`"/<repo-name>"`).
 
 ## Theme
 
