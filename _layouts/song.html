@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% include head.html %}
+</head>
+<body>
+{% include header.html %}
+
+<main class="wrap page song-page">
+  <a class="back-link" href="{{ '/' | relative_url }}#songs">&larr; Back to all songs</a>
+
+  <article class="song">
+    <header class="song__header">
+      <h1 class="song__title">{{ page.title }}</h1>
+      <p class="song__performer">{{ page.performer }}</p>
+      {% include star-rating.html rating=page.rating %}
+    </header>
+
+    <div class="song__review">
+      {{ content }}
+    </div>
+  </article>
+</main>
+
+{% include footer.html %}
+</body>
+</html>

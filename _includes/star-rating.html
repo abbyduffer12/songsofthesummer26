@@ -1,0 +1,10 @@
+{% comment %}
+  Renders a 1-5 star rating.
+  Usage: include star-rating.html, passing rating=page.rating
+  `rating` should be a whole number from 0 (unrated) to 5.
+{% endcomment %}
+{% assign star_rating_value = include.rating | default: 0 | plus: 0 %}
+<span class="star-rating" role="img" aria-label="Rating: {{ star_rating_value }} out of 5 stars">
+  {% for i in (1..5) %}{% if i <= star_rating_value %}<span class="star star--filled" aria-hidden="true">&#9733;</span>{% else %}<span class="star star--empty" aria-hidden="true">&#9734;</span>{% endif %}{% endfor %}
+  <span class="star-rating__value">{{ star_rating_value }}/5</span>
+</span>

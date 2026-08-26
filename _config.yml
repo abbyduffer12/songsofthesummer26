@@ -1,0 +1,60 @@
+# ------------------------------------------------------------------
+# Site configuration
+# Replace these values with your own before publishing.
+# ------------------------------------------------------------------
+
+title: Songs of the Summer
+tagline: A playlist of reviews, one song at a time
+description: >-
+  A Jekyll template for building a "Songs of the Summer" review site.
+  Each song gets its own page with a title, performer, review, and
+  a five-star rating. Replace this description with your own.
+
+# GitHub Pages project-site settings.
+# If you rename the repo, update baseurl to match: "/<repo-name>"
+url: "https://vt-evia.github.io"
+baseurl: "/songsofthesummer26"
+
+author: Your Name
+email: your-email@example.com
+
+# ------------------------------------------------------------------
+# Build settings
+# ------------------------------------------------------------------
+
+markdown: kramdown
+kramdown:
+  input: GFM
+
+permalink: /:categories/:title/
+
+collections:
+  songs:
+    output: true
+    permalink: /songs/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: songs
+    values:
+      layout: song
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+sass:
+  style: compressed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules
+  - vendor

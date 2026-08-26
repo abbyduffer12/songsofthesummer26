@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% include head.html %}
+</head>
+<body>
+{% include header.html %}
+
+<section class="hero">
+  <div class="wrap">
+    <p class="hero__eyebrow">The mixtape</p>
+    <h1>{{ site.title }}</h1>
+    <p class="hero__tagline">{{ site.tagline }}</p>
+  </div>
+</section>
+
+<main class="wrap page">
+  {{ content }}
+
+  <section id="songs" class="song-grid">
+    {% assign songs = site.songs | sort: "song_number" %}
+    {% for song in songs %}
+    <a class="song-card" href="{{ song.url | relative_url }}">
+      <span class="song-card__number">{{ song.song_number | default: forloop.index }}</span>
+      <h2 class="song-card__title">{{ song.title }}</h2>
+      <p class="song-card__performer">{{ song.performer }}</p>
+      {% include star-rating.html rating=song.rating %}
+    </a>
+    {% endfor %}
+  </section>
+</main>
+
+{% include footer.html %}
+</body>
+</html>
