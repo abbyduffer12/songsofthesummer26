@@ -166,14 +166,7 @@ This site deploys to GitHub Pages automatically via the workflow in
 After that, every commit to `main` builds and publishes the site with no
 further action needed.
 
-## For instructors and maintainers: optional local preview
+## Provenance
 
-Students don't need this — everything above works entirely in the browser.
-If you'd like to preview the site on your own machine before it's live:
-
-```bash
-bundle install
-bundle exec jekyll serve
-```
-
-Then open http://localhost:4000/songsofthesummer26/.
+This repository — the site's structure, theme, and this README — was built
+with [Claude](https://claude.ai/code), Anthropic's AI coding assistant.
