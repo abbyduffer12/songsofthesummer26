@@ -1,100 +1,206 @@
 # Songs of the Summer
 
-A website of song reviews, built and published entirely from your browser —
-**no software to install.** You'll do all of your work on GitHub.com: click a
-file, click the pencil icon to edit it, type your review in Markdown, and
-commit. A few seconds later, the live site updates itself automatically.
+This is a website of song reviews — a home page plus ten song pages, one per
+song. You will build the whole thing here, on GitHub.com, in your web
+browser. You will never download anything, install anything, or open a
+terminal. Every change you make gets typed and saved directly on this
+website.
 
-The site has:
-- A home page listing every song.
-- Ten song pages (`_songs/song-01.md` through `song-10.md`), one per song.
+## A few words you'll see
 
-Each song page has the same four things: a **title**, a **performer**, your
-**review** (a couple of paragraphs, written by you), and a **star rating**
-from 0–5.
+You don't need to memorize these — just glance back here if one of them
+comes up below.
 
-## Editing a song page on GitHub.com
+- **Repository** (or "repo") — this project. Everything for the site —
+  its pages, its settings, its look — lives in the list of files and
+  folders you see when you open this repository on GitHub.
+- **File** — one piece of content, like one song's page. You'll open files,
+  change their text, and save your changes.
+- **Commit** — GitHub's word for "save." Every time you save a change to a
+  file, you're making a commit, and you'll type a short note describing
+  what you changed (like "Add review for song 3").
+- **Front matter** — a small block of settings at the top of a file,
+  between two lines that look like `---`. You'll see this in every song
+  file — it's covered in detail below.
+- **Actions / build** — every time you commit a change, GitHub
+  automatically checks that it didn't break anything, then republishes the
+  live site. You don't have to do anything to trigger this — it just
+  happens.
 
-1. In this repository, open the `_songs` folder and click one of the files
-   (for example `song-01.md`).
-2. Click the pencil icon (✏️) in the top-right of the file view to start
-   editing.
-3. Edit the text — see [The content model](#the-content-model-front-matter)
-   below for exactly what to change.
-4. Scroll to the bottom of the page. GitHub will ask how you want to save
-   your change:
-   - **Commit directly to the `main` branch** — the simplest option. Your
-     change goes live as soon as the build finishes.
-   - **Create a new branch and start a pull request** — use this if your
-     class wants changes reviewed before they go live. Someone (an
-     instructor, a partner) reviews your pull request and merges it when
-     it's ready.
-5. Click **Commit changes** (or **Propose changes**).
+## The three things you'll do
 
-That's it — no downloads, no terminal, no local setup.
+1. **Set up your site's basic info** — the title, and the address it lives
+   at — in one settings file, `_config.yml`.
+2. **Write your ten song reviews** — one file per song, in the `_songs`
+   folder.
+3. **(Optional) Customize the look** — colors and fonts, by prompting an
+   LLM.
 
-## The content model (front matter)
+Each is explained step by step below.
 
-Open any file in `_songs/` and you'll see something like this at the top:
-
-```markdown
----
-song_number: 1
-title: "Song Title 1"
-performer: "Performer Name"
-rating: 0
 ---
 
-Write a first paragraph introducing the song...
+## Step 1: Set up your site's basic info (`_config.yml`)
 
-Write a second paragraph going deeper...
-```
+`_config.yml` is the file that holds your site's name, tagline, and web
+address. You'll edit it once, near the start.
 
-The part between the two `---` lines is called **front matter** — think of
-it as a small settings form for the page. Replace the placeholder values:
+1. At the top of this repository's file list, click on **`_config.yml`**.
+2. On the page that opens, look at the top-right corner of the file and
+   click the **pencil icon** (hover over it and it will say "Edit this
+   file"). The file becomes editable, with line numbers down the left
+   side.
+3. Find these lines near the top and change the text after each colon
+   (`:`) — leave everything else, including the quotation marks, exactly
+   where it is:
 
-| Field | What it means | Example |
-|---|---|---|
-| `song_number` | Controls the order songs appear in on the home page. Leave as-is unless you want to reorder the list. | `song_number: 3` |
-| `title` | The song's title. Keep the quotation marks. | `title: "Cruel Summer"` |
-| `performer` | Who performs the song. Keep the quotation marks. | `performer: "Taylor Swift"` |
-| `rating` | Your rating, a whole number from 0 (unrated) to 5. | `rating: 4` |
+   ```yaml
+   title: Songs of the Summer
+   tagline: A playlist of reviews, one song at a time
+   description: >-
+     A Jekyll template for building a "Songs of the Summer" review site.
+     Each song gets its own page with a title, performer, review, and
+     a five-star rating. Replace this description with your own.
+   ```
 
-Everything **below** the second `---` is your review. Write as many
-paragraphs as you like, in plain Markdown — no special formatting is
-required to make the page work.
+   - `title` — the name of your site, as it will appear in the browser
+     tab and at the top of the home page.
+   - `tagline` — a one-line subtitle under the title.
+   - `description` — a few sentences about your site. This block spans
+     several indented lines (notice the `>-` and the indent) — you can
+     rewrite all of those lines, just keep each new line indented the
+     same amount as the ones you're replacing.
+
+4. A little further down, find these two lines:
+
+   ```yaml
+   url: "https://your-username.github.io"
+   baseurl: "/songsofthesummer26"
+   ```
+
+   These two lines together form your site's web address, and they need
+   to match this repository exactly:
+
+   - `url` — look at your browser's address bar right now. It reads
+     something like `github.com/YOUR-USERNAME/songsofthesummer26`.
+     Replace `your-username` inside the quotes with that `YOUR-USERNAME`
+     part (everything right after `github.com/`). Keep the quotation
+     marks and the rest of the text (`https://` and `.github.io`) exactly
+     as it is.
+   - `baseurl` — this should already read `"/songsofthesummer26"`, which
+     matches this repository's name, so you can usually leave it alone.
+     Only change it if you renamed the repository — in that case, replace
+     `songsofthesummer26` with the repository's new name, keeping the
+     leading `/` and the quotation marks.
+
+5. Optionally, further down, fill in your own name and email:
+
+   ```yaml
+   author: Your Name
+   email: your-email@example.com
+   ```
+
+6. Scroll all the way to the bottom of the page. You'll see a box titled
+   **"Commit changes"**:
+   - Type a short note in the first box, like `Set up my site info`.
+   - Leave **"Commit directly to the `main` branch"** selected.
+   - Click the green **Commit changes** button.
+
+Your site's basic info is now set. A build will start automatically — see
+[Checking your build](#checking-your-build) below if you want to watch it
+finish.
+
+---
+
+## Step 2: Write your ten song reviews
+
+Each song has its own file in the `_songs` folder: `song-01.md` through
+`song-10.md`. You'll repeat the same steps for each one.
+
+### Editing one song page
+
+1. In this repository, click the **`_songs`** folder to open it.
+2. Click on a file, for example **`song-01.md`**.
+3. Click the **pencil icon** in the top-right corner to start editing.
+4. At the top of the file, between the two `---` lines, you'll see the
+   **front matter** — the song's settings:
+
+   ```yaml
+   ---
+   song_number: 1
+   title: "Song Title 1"
+   performer: "Performer Name"
+   rating: 0
+   ---
+   ```
+
+   Replace the placeholder values, keeping the quotation marks around
+   `title` and `performer`:
+
+   | Field | What to put there | Example |
+   |---|---|---|
+   | `song_number` | Leave this matching the file's number (`song-01.md` → `1`, `song-02.md` → `2`, and so on). It controls the order songs appear in on the home page. | `song_number: 1` |
+   | `title` | The song's title, in quotation marks. | `title: "Cruel Summer"` |
+   | `performer` | Who performs the song, in quotation marks. | `performer: "Taylor Swift"` |
+   | `rating` | Your rating: a whole number from 0 (unrated) to 5. No quotation marks. | `rating: 4` |
+
+5. Below the second `---` line, delete the placeholder paragraphs and
+   write your review. Write as many paragraphs as you like — press Enter
+   twice between paragraphs to start a new one. See the Markdown
+   reference below if you want to bold text or add a link.
+6. Scroll to the bottom of the page. In the **"Commit changes"** box:
+   - Type a short note, like `Add review for song 1`.
+   - Leave **"Commit directly to the `main` branch"** selected (or choose
+     **"Create a new branch and start a pull request"** if your class is
+     having reviews check work before it goes live).
+   - Click the green **Commit changes** (or **Propose changes**) button.
+
+### Repeat for all ten
+
+Do the same for `song-02.md` through `song-10.md`. You can do them in any
+order, and in as many separate visits as you like — each file is saved the
+moment you commit it.
 
 ### Quick Markdown reference
 
-You don't need to know much Markdown to write a review:
+Your review is written in Markdown, a simple way to format text with
+plain characters:
 
 | You type | You get |
 |---|---|
 | `**bold text**` | **bold text** |
 | `*italic text*` | *italic text* |
 | `[link text](https://example.com)` | a clickable link |
-| A blank line between lines | a new paragraph |
+| A blank line between two lines of text | a new paragraph |
+
+---
 
 ## Checking your build
 
-Every commit — whether it's pushed straight to `main` or added to a pull
-request — automatically triggers a **build check** in the "Actions" tab of
-this repository. It catches typos in the front matter (like a missing
-`---` or a stray quotation mark) before they can break the live site.
+Every time you commit a change, GitHub automatically tries to rebuild your
+site, whether the commit went straight to `main` or into a pull request.
+This catches mistakes — like a missing `---` or a stray quotation mark —
+before they can break the live site.
 
-- ✅ Green check = the site built successfully.
-- ❌ Red X = something's wrong. Click into the failed run and read the
-  error — it usually points straight at the line that needs fixing.
+1. Click the **Actions** tab near the top of the repository.
+2. Find your commit in the list — it will have the note you typed.
+3. Look at the icon next to it:
+   - ✅ A green checkmark means the site built successfully.
+   - ❌ A red X means something's wrong. Click into that run and read the
+     error message — it will usually point at the exact line to fix. Go
+     back, edit the file again, and commit the fix the same way.
 
-Only commits that land on `main` actually publish to the live site; a
-pull-request build is just a check, so it's safe to experiment on a branch.
+Only commits on `main` actually publish to the live site; a commit inside
+a pull request is just a check, so it's safe to experiment there.
 
-## Customizing the site's look with an LLM
+---
+
+## Step 3 (optional): Customize the look with an LLM
 
 The site's colors, fonts, and other visual details are controlled by one
-small block of settings near the top of
-[`assets/css/main.scss`](assets/css/main.scss), called the **`:root`
-block**. It looks like this:
+small block of settings near the top of a file called
+**`assets/css/main.scss`**, called the **`:root` block**. It looks like
+this:
 
 ```css
 :root {
@@ -118,14 +224,12 @@ block**. It looks like this:
 ```
 
 Every color and font on the site is built from these values, so changing
-them re-skins the whole site — without touching any other file. You don't
+them re-skins the whole site — no other file needs to change. You don't
 need to know CSS to do this; you can ask an LLM (ChatGPT, Claude, Gemini,
-etc.) to redesign it for you.
+or whichever one you use) to redesign it for you.
 
-**Steps:**
-
-1. Open `assets/css/main.scss` on GitHub.com and copy the `:root { ... }`
-   block shown above.
+1. In this repository, open **`assets/css/main.scss`** and copy the
+   `:root { ... }` block shown above (or however it currently reads).
 2. Paste it into your LLM chat along with a prompt like this one:
 
    > I have a Jekyll website's CSS custom properties, shown below, for a
@@ -144,27 +248,30 @@ etc.) to redesign it for you.
 
 3. Copy the LLM's updated `:root` block.
 4. Back on GitHub.com, click the pencil icon on `assets/css/main.scss`,
-   select and delete the old `:root { ... }` block, and paste in the new
-   one. **Keep the variable names exactly as they are** — only the values
-   after each colon should change — otherwise the rest of the stylesheet
-   won't know what to use.
-5. Commit your change and check the Actions tab for the green checkmark.
-   Once it passes, refresh the live site to see the new look.
+   select the old `:root { ... }` block and delete it, then paste in the
+   new one. **Keep the variable names exactly as they are** — only the
+   values after each colon should change — otherwise the rest of the
+   stylesheet won't know what to use.
+5. Scroll down and commit your change, the same way you did in Steps 1
+   and 2. Check the Actions tab for the green checkmark, then refresh the
+   live site to see the new look.
 
-## Publishing settings (for the repository owner)
+---
 
-This site deploys to GitHub Pages automatically via the workflow in
-`.github/workflows/pages.yml`. Before your first publish:
+## Publishing settings
 
-1. In `_config.yml`, set `url` to your own GitHub Pages domain (e.g.
-   `"https://<your-username>.github.io"`) — the shipped value is just a
-   placeholder. `baseurl` should already match this repo's name; update it
-   too if you rename or fork the repo.
-2. In this repository, go to **Settings → Pages**.
-3. Under **Source**, choose **GitHub Actions**.
+This site deploys to GitHub Pages automatically, through a workflow file
+already included in this repository. Before your very first publish,
+someone with access to this repository's settings needs to turn it on:
 
-After that, every commit to `main` builds and publishes the site with no
-further action needed.
+1. Go to this repository's **Settings** tab, then click **Pages** in the
+   left sidebar.
+2. Under **Build and deployment → Source**, choose **GitHub Actions**.
+
+After that, every commit to `main` builds and publishes the site
+automatically — no further action needed. (Steps 1 and 2 above already
+covered getting `url` and `baseurl` set correctly in `_config.yml`, which
+this depends on.)
 
 ## Provenance
 
