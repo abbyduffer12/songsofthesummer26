@@ -11,8 +11,9 @@ description: >-
   a five-star rating. Replace this description with your own.
 
 # GitHub Pages project-site settings.
-# If you rename the repo, update baseurl to match: "/<repo-name>"
-url: "https://vt-evia.github.io"
+# TODO: set `url` to your own GitHub Pages domain (e.g. "https://<your-username>.github.io"),
+# and update `baseurl` to match this repo's name: "/<repo-name>"
+url: "https://your-username.github.io"
 baseurl: "/songsofthesummer26"
 
 author: Your Name

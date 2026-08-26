@@ -1,5 +1,5 @@
 ---
-song_number: 05
+song_number: 5
 title: "Song Title 05"
 performer: "Performer Name"
 rating: 0
