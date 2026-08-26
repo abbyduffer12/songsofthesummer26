@@ -154,17 +154,17 @@ etc.) to redesign it for you.
 ## Publishing settings (for the repository owner)
 
 This site deploys to GitHub Pages automatically via the workflow in
-`.github/workflows/pages.yml`. To turn it on for the first time:
+`.github/workflows/pages.yml`. Before your first publish:
 
-1. In this repository, go to **Settings → Pages**.
-2. Under **Source**, choose **GitHub Actions**.
+1. In `_config.yml`, set `url` to your own GitHub Pages domain (e.g.
+   `"https://<your-username>.github.io"`) — the shipped value is just a
+   placeholder. `baseurl` should already match this repo's name; update it
+   too if you rename or fork the repo.
+2. In this repository, go to **Settings → Pages**.
+3. Under **Source**, choose **GitHub Actions**.
 
 After that, every commit to `main` builds and publishes the site with no
 further action needed.
-
-If the repository is ever renamed or forked under a different name, update
-`baseurl` (and `url`) in `_config.yml` to match the new GitHub Pages
-address.
 
 ## For instructors and maintainers: optional local preview
 
