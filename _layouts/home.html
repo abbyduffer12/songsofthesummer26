@@ -4,14 +4,28 @@
 {% include head.html %}
 </head>
 <body>
+{% include icons.html %}
 {% include header.html %}
 
 <section class="hero">
+  <svg class="deco deco--shell hero__deco hero__deco--shell" aria-hidden="true"><use href="#icon-shell"/></svg>
+  <svg class="deco deco--starfish hero__deco hero__deco--starfish" aria-hidden="true"><use href="#icon-starfish"/></svg>
+  <svg class="deco deco--flower hero__deco hero__deco--flower" aria-hidden="true"><use href="#icon-flower"/></svg>
+  <svg class="deco deco--sun hero__deco hero__deco--sun" aria-hidden="true"><use href="#icon-sun"/></svg>
+  <svg class="deco deco--flower hero__deco hero__deco--flower2" aria-hidden="true"><use href="#icon-flower"/></svg>
+  <svg class="deco deco--shell hero__deco hero__deco--shell2" aria-hidden="true"><use href="#icon-shell"/></svg>
   <div class="wrap">
-    <p class="hero__eyebrow">The mixtape</p>
+    <p class="hero__eyebrow">
+      <svg class="icon icon--inline" aria-hidden="true"><use href="#icon-sun"/></svg>
+      The mixtape
+      <svg class="icon icon--inline" aria-hidden="true"><use href="#icon-sun"/></svg>
+    </p>
     <h1>{{ site.title }}</h1>
     <p class="hero__tagline">{{ site.tagline }}</p>
   </div>
+  <svg class="hero__wave" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 30c50-20 100-20 150 0s100 20 150 0 100-20 150 0 100 20 150 0 100-20 150 0 100 20 150 0 100-20 150 0 100 20 150 0V60H0Z" fill="var(--color-sand)"/>
+  </svg>
 </section>
 
 <main class="wrap page">
@@ -21,6 +35,9 @@
     {% assign songs = site.songs | sort: "song_number" %}
     {% for song in songs %}
     <a class="song-card" href="{{ song.url | relative_url }}">
+      <svg class="song-card__deco" aria-hidden="true">
+        {% cycle 'song-icons': '<use href="#icon-shell"/>', '<use href="#icon-starfish"/>', '<use href="#icon-flower"/>' %}
+      </svg>
       <span class="song-card__number">{{ song.song_number | default: forloop.index }}</span>
       <h2 class="song-card__title">{{ song.title }}</h2>
       <p class="song-card__performer">{{ song.performer }}</p>

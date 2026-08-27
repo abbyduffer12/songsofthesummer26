@@ -9,18 +9,22 @@
   --color-ocean: #00b4d8;
   --color-ocean-deep: #0077b6;
   --color-lagoon: #90e0ef;
-  --color-sand: #fdf3dd;
-  --color-sand-dark: #f4e2b8;
+  --color-sand: #fff6e5;
+  --color-sand-dark: #ffe4ad;
   --color-coral: #ff6b5b;
+  --color-coral-deep: #ee4d3d;
   --color-sun: #ffc857;
+  --color-sun-deep: #ffa93e;
+  --color-hibiscus: #ff5da2;
+  --color-palm: #2bb693;
   --color-ink: #123544;
   --color-ink-soft: #3c6470;
   --color-white: #ffffff;
 
-  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-display: Georgia, "Times New Roman", serif;
+  --font-body: "Quicksand", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: "Baloo 2", Georgia, "Times New Roman", serif;
 
-  --radius: 16px;
+  --radius: 20px;
   --shadow: 0 10px 30px rgba(18, 53, 68, 0.12);
 }
 
@@ -33,9 +37,16 @@ html, body {
 
 body {
   font-family: var(--font-body);
+  font-weight: 500;
   color: var(--color-ink);
-  background: var(--color-sand);
+  background-color: var(--color-sand);
+  background-image:
+    radial-gradient(circle at 6% 12%, rgba(255, 200, 87, 0.35) 0, transparent 40%),
+    radial-gradient(circle at 94% 30%, rgba(0, 180, 216, 0.18) 0, transparent 45%),
+    radial-gradient(circle at 50% 90%, rgba(255, 107, 91, 0.12) 0, transparent 40%);
+  background-attachment: fixed;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 a {
@@ -50,10 +61,28 @@ a:hover { text-decoration: underline; }
   padding: 0 24px;
 }
 
+// ------------------------------------------------------------------ icons
+.icon {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  display: inline-block;
+  vertical-align: -0.15em;
+}
+
+.icon--inline {
+  width: 0.85em;
+  height: 0.85em;
+  margin: 0 4px;
+  color: var(--color-sun);
+}
+
 // ---------------------------------------------------------------- header
 .site-header {
   background: var(--color-white);
-  border-bottom: 1px solid var(--color-sand-dark);
+  border-bottom: 3px solid var(--color-sun);
+  position: relative;
+  z-index: 10;
 
   .wrap {
     display: flex;
@@ -69,11 +98,23 @@ a:hover { text-decoration: underline; }
   align-items: center;
   gap: 10px;
   font-family: var(--font-display);
-  font-size: 1.4rem;
-  font-weight: bold;
+  font-size: 1.5rem;
+  font-weight: 700;
   color: var(--color-ink);
 
-  &:hover { text-decoration: none; color: var(--color-coral); }
+  &:hover {
+    text-decoration: none;
+    color: var(--color-coral);
+
+    .site-brand__icon { transform: rotate(-12deg) scale(1.1); }
+  }
+}
+
+.site-brand__icon {
+  width: 28px;
+  height: 28px;
+  color: var(--color-coral);
+  transition: transform 0.2s ease;
 }
 
 .site-nav {
@@ -82,32 +123,39 @@ a:hover { text-decoration: underline; }
 
   a {
     color: var(--color-ink-soft);
-    font-weight: 600;
+    font-weight: 700;
   }
   a:hover { color: var(--color-coral); }
 }
 
 // ------------------------------------------------------------------ hero
 .hero {
+  position: relative;
   background: linear-gradient(135deg, var(--color-ocean) 0%, var(--color-ocean-deep) 55%, var(--color-lagoon) 100%);
   color: var(--color-white);
-  padding: 72px 0;
+  padding: 88px 0 108px;
   text-align: center;
+  overflow: hidden;
 }
 
 .hero__eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   font-size: 0.8rem;
   font-weight: 700;
-  opacity: 0.85;
+  opacity: 0.9;
   margin: 0 0 12px;
 }
 
 .hero h1 {
   font-family: var(--font-display);
-  font-size: 3rem;
+  font-weight: 800;
+  font-size: 3.2rem;
   margin: 0 0 12px;
+  text-shadow: 0 4px 20px rgba(0, 30, 40, 0.2);
 }
 
 .hero__tagline {
@@ -116,10 +164,52 @@ a:hover { text-decoration: underline; }
   margin: 0;
 }
 
+.hero__wave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 40px;
+  display: block;
+}
+
+// floating decorative icons in the hero
+.hero__deco {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.55);
+  filter: drop-shadow(0 6px 10px rgba(0, 30, 40, 0.15));
+  animation: bob 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.hero__deco--shell   { top: 18%; left: 6%;  width: 46px; height: 46px; color: var(--color-sand); animation-delay: 0s; }
+.hero__deco--starfish{ top: 62%; left: 12%; width: 34px; height: 34px; color: var(--color-sun); animation-delay: 1.2s; }
+.hero__deco--flower  { top: 12%; right: 10%; width: 38px; height: 38px; color: var(--color-hibiscus); animation-delay: 0.6s; }
+.hero__deco--sun     { top: 55%; right: 6%; width: 52px; height: 52px; color: var(--color-sun); animation-delay: 1.8s; }
+.hero__deco--flower2 { bottom: 8%; left: 40%; width: 28px; height: 28px; color: var(--color-white); animation-delay: 2.4s; }
+.hero__deco--shell2  { top: 8%; left: 46%; width: 26px; height: 26px; color: var(--color-lagoon); animation-delay: 3s; }
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-14px) rotate(6deg); }
+}
+
+@media (max-width: 700px) {
+  .hero__deco--shell2,
+  .hero__deco--flower2,
+  .hero__deco--starfish,
+  .hero__deco--sun { display: none; }
+
+  .hero__deco--shell { top: 6%; left: 4%; width: 34px; height: 34px; }
+  .hero__deco--flower { top: 6%; right: 4%; width: 30px; height: 30px; }
+}
+
 // ------------------------------------------------------------------ page
 .page {
   padding-top: 48px;
   padding-bottom: 64px;
+  position: relative;
 }
 
 // -------------------------------------------------------------- song grid
@@ -137,14 +227,33 @@ a:hover { text-decoration: underline; }
   box-shadow: var(--shadow);
   padding: 24px;
   position: relative;
+  overflow: hidden;
   color: var(--color-ink);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  border-top: 5px solid var(--color-coral);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:nth-child(3n+2) { border-top-color: var(--color-ocean); }
+  &:nth-child(3n+3) { border-top-color: var(--color-sun); }
 
   &:hover {
     text-decoration: none;
-    transform: translateY(-4px);
-    box-shadow: 0 16px 36px rgba(18, 53, 68, 0.18);
+    transform: translateY(-6px) rotate(-0.5deg);
+    box-shadow: 0 18px 40px rgba(18, 53, 68, 0.2);
+
+    .song-card__deco { transform: scale(1.15) rotate(8deg); opacity: 0.22; }
   }
+}
+
+.song-card__deco {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 84px;
+  height: 84px;
+  color: var(--color-sand-dark);
+  opacity: 0.5;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  pointer-events: none;
 }
 
 .song-card__number {
@@ -156,17 +265,21 @@ a:hover { text-decoration: underline; }
   border-radius: 999px;
   padding: 2px 10px;
   margin-bottom: 12px;
+  position: relative;
 }
 
 .song-card__title {
   font-family: var(--font-display);
+  font-weight: 700;
   font-size: 1.3rem;
   margin: 0 0 4px;
+  position: relative;
 }
 
 .song-card__performer {
   color: var(--color-ink-soft);
   margin: 0 0 12px;
+  position: relative;
 }
 
 // ------------------------------------------------------------ star rating
@@ -174,6 +287,7 @@ a:hover { text-decoration: underline; }
   display: inline-flex;
   align-items: center;
   gap: 2px;
+  position: relative;
 }
 
 .star {
@@ -195,7 +309,7 @@ a:hover { text-decoration: underline; }
 .back-link {
   display: inline-block;
   margin-bottom: 24px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .song {
@@ -203,16 +317,43 @@ a:hover { text-decoration: underline; }
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   padding: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.song__deco {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.12;
+}
+
+.song__deco--starfish {
+  width: 140px;
+  height: 140px;
+  top: -30px;
+  right: -30px;
+  color: var(--color-sun);
+  transform: rotate(12deg);
+}
+
+.song__deco--flower {
+  width: 90px;
+  height: 90px;
+  bottom: -20px;
+  left: -20px;
+  color: var(--color-hibiscus);
 }
 
 .song__header {
   border-bottom: 1px dashed var(--color-sand-dark);
   padding-bottom: 24px;
   margin-bottom: 24px;
+  position: relative;
 }
 
 .song__title {
   font-family: var(--font-display);
+  font-weight: 700;
   font-size: 2.2rem;
   margin: 0 0 6px;
 }
@@ -225,6 +366,7 @@ a:hover { text-decoration: underline; }
 
 .song__review {
   font-size: 1.05rem;
+  position: relative;
 
   p:first-child { margin-top: 0; }
 }
@@ -243,6 +385,22 @@ a:hover { text-decoration: underline; }
   font-size: 0.9rem;
 
   a { color: var(--color-sun); }
+}
+
+.site-footer__icons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 16px;
+
+  .icon {
+    width: 22px;
+    height: 22px;
+    color: var(--color-sun);
+
+    &:nth-child(2n) { color: var(--color-coral); }
+    &:nth-child(3n) { color: var(--color-lagoon); }
+  }
 }
 
 .site-footer__hint {
