@@ -2,8 +2,7 @@
 
 This is a website of song reviews — a home page plus ten song pages, one per
 song. You will build the whole thing here, on GitHub.com, in your web
-browser. You will never download anything, install anything, or open a
-terminal. Every change you make gets typed and saved directly on this
+browser. You don't need to download or install anything. Every change you make gets typed and saved directly on this
 website.
 
 ## A few words you'll see
@@ -112,6 +111,24 @@ finish.
 
 ---
 
+## Publishing settings
+
+This site deploys to GitHub Pages automatically, through a workflow file
+already included in this repository. Before your very first publish,
+someone with access to this repository's settings needs to turn it on:
+
+1. Go to this repository's **Settings** tab, then click **Pages** in the
+   left sidebar.
+2. Under **Build and deployment → Source**, choose **GitHub Actions**.
+
+After that, every commit to `main` builds and publishes the site
+automatically — no further action needed. (Steps 1 and 2 above already
+covered getting `url` and `baseurl` set correctly in `_config.yml`, which
+this depends on.)
+
+
+---
+
 ## Step 2: Write your ten song reviews
 
 Each song has its own file in the `_songs` folder: `song-01.md` through
@@ -190,8 +207,6 @@ before they can break the live site.
      error message — it will usually point at the exact line to fix. Go
      back, edit the file again, and commit the fix the same way.
 
-Only commits on `main` actually publish to the live site; a commit inside
-a pull request is just a check, so it's safe to experiment there.
 
 ---
 
@@ -258,20 +273,6 @@ or whichever one you use) to redesign it for you.
 
 ---
 
-## Publishing settings
-
-This site deploys to GitHub Pages automatically, through a workflow file
-already included in this repository. Before your very first publish,
-someone with access to this repository's settings needs to turn it on:
-
-1. Go to this repository's **Settings** tab, then click **Pages** in the
-   left sidebar.
-2. Under **Build and deployment → Source**, choose **GitHub Actions**.
-
-After that, every commit to `main` builds and publishes the site
-automatically — no further action needed. (Steps 1 and 2 above already
-covered getting `url` and `baseurl` set correctly in `_config.yml`, which
-this depends on.)
 
 ## Provenance
 
