@@ -4,12 +4,15 @@
 {% include head.html %}
 </head>
 <body>
+{% include icons.html %}
 {% include header.html %}
 
 <main class="wrap page song-page">
   <a class="back-link" href="{{ '/' | relative_url }}#songs">&larr; Back to all songs</a>
 
   <article class="song">
+    <svg class="song__deco song__deco--starfish" aria-hidden="true"><use href="#icon-starfish"/></svg>
+    <svg class="song__deco song__deco--flower" aria-hidden="true"><use href="#icon-flower"/></svg>
     <header class="song__header">
       <h1 class="song__title">{{ page.title }}</h1>
       <p class="song__performer">{{ page.performer }}</p>
