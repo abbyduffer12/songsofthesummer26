@@ -12,11 +12,8 @@
   --color-sand: #fff6e5;
   --color-sand-dark: #ffe4ad;
   --color-coral: #ff6b5b;
-  --color-coral-deep: #ee4d3d;
   --color-sun: #ffc857;
-  --color-sun-deep: #ffa93e;
   --color-hibiscus: #ff5da2;
-  --color-palm: #2bb693;
   --color-ink: #123544;
   --color-ink-soft: #3c6470;
   --color-white: #ffffff;
@@ -41,9 +38,9 @@ body {
   color: var(--color-ink);
   background-color: var(--color-sand);
   background-image:
-    radial-gradient(circle at 6% 12%, rgba(255, 200, 87, 0.35) 0, transparent 40%),
-    radial-gradient(circle at 94% 30%, rgba(0, 180, 216, 0.18) 0, transparent 45%),
-    radial-gradient(circle at 50% 90%, rgba(255, 107, 91, 0.12) 0, transparent 40%);
+    radial-gradient(circle at 6% 12%, color-mix(in srgb, var(--color-sun) 35%, transparent) 0, transparent 40%),
+    radial-gradient(circle at 94% 30%, color-mix(in srgb, var(--color-ocean) 18%, transparent) 0, transparent 45%),
+    radial-gradient(circle at 50% 90%, color-mix(in srgb, var(--color-coral) 12%, transparent) 0, transparent 40%);
   background-attachment: fixed;
   line-height: 1.6;
   overflow-x: hidden;
