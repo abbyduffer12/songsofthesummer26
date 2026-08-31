@@ -2,12 +2,10 @@
 song_number: 2
 title: "Choosing Texas"
 performer: "Ella Langley"
-rating: 5
+rating: 4
 ---
 
-_This is a placeholder page. Replace the front matter above with the song's real
-title, performer, and your rating (0-5), then replace this body text with your
-own review, written in Markdown._
+_Love this song saw it live and can listen to it on repeat. Never let the haters hate. _
 
 Write a first paragraph introducing the song: when it came out, the vibe it
 has, and why it earns a spot on your Songs of the Summer list.
