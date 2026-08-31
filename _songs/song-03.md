@@ -1,8 +1,8 @@
 ---
 song_number: 3
-title: "Song Title 03"
-performer: "Performer Name"
-rating: 0
+title: "Dreams"
+performer: "Fleewood Mac"
+rating: 5
 ---
 
 _This is a placeholder page. Replace the front matter above with the song's real
