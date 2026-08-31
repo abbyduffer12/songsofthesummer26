@@ -5,7 +5,7 @@ performer: "Fleetwood Mac"
 rating: 4
 ---
 
-Monkeys
+Monkeys and bananas
 
 Write a first paragraph introducing the song: when it came out, the vibe it
 has, and why it earns a spot on your Songs of the Summer list.
