@@ -1,13 +1,11 @@
 ---
 song_number: 1
-title: "Song Title 01"
-performer: "Performer Name"
-rating: 0
+title: "I like It"
+performer: "Enrique Igesias (feat. Pitbull)"
+rating: 5
 ---
 
-_This is a placeholder page. Replace the front matter above with the song's real
-title, performer, and your rating (0-5), then replace this body text with your
-own review, written in Markdown._
+_This was my number one song in June of 2026. Great song to listen to when it's warm and sunny outside._
 
 Write a first paragraph introducing the song: when it came out, the vibe it
 has, and why it earns a spot on your Songs of the Summer list.
