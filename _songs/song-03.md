@@ -2,7 +2,7 @@
 song_number: 3
 title: "Dreams"
 performer: "Fleetwood Mac"
-rating: 5
+rating: 4
 ---
 
 _This is a placeholder page. Replace the front matter above with the song's real
