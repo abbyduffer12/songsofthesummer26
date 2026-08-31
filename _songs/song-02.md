@@ -1,8 +1,8 @@
 ---
 song_number: 2
-title: "Song Title 02"
-performer: "Performer Name"
-rating: 0
+title: "Choosing Texas"
+performer: "Ella Langley"
+rating: 5
 ---
 
 _This is a placeholder page. Replace the front matter above with the song's real
