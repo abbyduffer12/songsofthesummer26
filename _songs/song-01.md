@@ -5,11 +5,6 @@ performer: "Eagles"
 rating: 5
 ---
 
-When it is warm and sunny outside all I want to do is listen to this song. It makes me happy and always lightens my mood. I lsten to it   at the pool, lake, or beach. It is the best serotonin boost of all time.  
+I wasn't alive when this song came out, but I definitely listened to it in my past life. When it is warm and sunny outside all I want to do is listen to this song. It makes me happy and always lightens my mood. I listen to it at the pool, lake, or beach. It is the best serotonin boost of all time.  
 
-Write a first paragraph introducing the song: when it came out, the vibe it
-has, and why it earns a spot on your Songs of the Summer list.
-
-Write a second paragraph going deeper &mdash; the lyrics, the production, a
-memory it's tied to, or how it compares to other songs on the list. Add as
-many paragraphs as you like; this is just a starting point.
+My mom would always play this song when driving us to the pool in the summer. It just reminds me of simpler times and really help me slow down and thing. The lyrics "Don't let the sound of your own wheels drive you crazy" is such a good message in a simple form. I listen to it and realy slow down and think about all of the things I am grateful for and not the things I can't control. 
