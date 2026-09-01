@@ -5,11 +5,6 @@ performer: "Fleetwood Mac"
 rating: 4
 ---
 
-I LOVE fleetwood Mac! This song is on every single one of my playlist. I love the vibe the melody and the message it has. Dreams is on repeat every summer until i die. 
+I LOVE fleetwood Mac! This song is on every single one of my playlist. I love the vibe the melody and the message it has. Dreams is on repeat every summer until i die. I wasn't alive when this song came out but my mom influenced me and influenced me well. 
 
-Write a first paragraph introducing the song: when it came out, the vibe it
-has, and why it earns a spot on your Songs of the Summer list.
-
-Write a second paragraph going deeper &mdash; the lyrics, the production, a
-memory it's tied to, or how it compares to other songs on the list. Add as
-many paragraphs as you like; this is just a starting point.
+"thunder only happens when it's raining." These iconic lyrics are perfect to me. I love the meaning of this song and everything it stands for. The melody the vocals just perfect. 
