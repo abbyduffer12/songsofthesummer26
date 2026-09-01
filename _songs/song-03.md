@@ -5,7 +5,7 @@ performer: "Fleetwood Mac"
 rating: 4
 ---
 
-Monkeys and bananas
+I LOVE fleetwood Mac! This song is on every single one of my playlist. I love the vibe the melody and the message it has. Dreams is on repeat every summer until i die. 
 
 Write a first paragraph introducing the song: when it came out, the vibe it
 has, and why it earns a spot on your Songs of the Summer list.
