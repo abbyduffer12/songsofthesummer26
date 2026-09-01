@@ -5,7 +5,7 @@ performer: "Eagles"
 rating: 5
 ---
 
-When it is warm and sunny outside all I want to do is listen to this song. It makes me happy and always lightens my mood. I lsten to it   at the pool, lake, beach.
+When it is warm and sunny outside all I want to do is listen to this song. It makes me happy and always lightens my mood. I lsten to it   at the pool, lake, or beach. It is the best serotonin boost of all time.  
 
 Write a first paragraph introducing the song: when it came out, the vibe it
 has, and why it earns a spot on your Songs of the Summer list.
