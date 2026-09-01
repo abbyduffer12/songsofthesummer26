@@ -1,11 +1,11 @@
 ---
 song_number: 2
-title: "Choosing Texas"
-performer: "Ella Langley"
-rating: 4
+title: "Springteen"
+performer: "Eric Church"
+rating: 5
 ---
 
-_Love this song saw it live and can listen to it on repeat. Never let the haters hate. _
+The perfect summer song. Everyone knows it. Everyone loves it. This song bring out so much joy in me I literally cannot explain how much I love it. If I could inject this song into my veins I would.
 
 Write a first paragraph introducing the song: when it came out, the vibe it
 has, and why it earns a spot on your Songs of the Summer list.
